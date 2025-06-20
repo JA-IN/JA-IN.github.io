@@ -1,10 +1,12 @@
 // Mobile menu toggle
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
+const body = document.body;
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     mobileNav.classList.toggle('active');
+    body.classList.toggle('no-scroll'); // Prevents background scrolling
 });
 
 // Close mobile menu when clicking on links
@@ -13,7 +15,17 @@ mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         mobileNav.classList.remove('active');
+        body.classList.remove('no-scroll');
     });
+});
+
+// Close mobile menu if resized to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        body.classList.remove('no-scroll');
+    }
 });
 
 // Scroll progress bar
@@ -66,6 +78,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 block: 'start'
             });
         }
+        // If it's a mobile link, close the mobile menu after clicking
+        if (this.classList.contains('mobile-nav-link')) {
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
     });
 });
 
@@ -74,50 +92,57 @@ window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        // Dark mode adjustment for scrolled navbar
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            navbar.style.background = 'rgba(30, 30, 30, 0.98)';
+        }
     } else {
         navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        // Dark mode adjustment for non-scrolled navbar
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            navbar.style.background = 'rgba(30, 30, 30, 0.95)';
+        }
     }
 });
 
-//project filers
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+// project filters
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-  filterBtns.forEach(btn => {
+filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active button
-      document.querySelector('.filter-btn.active').classList.remove('active');
-      btn.classList.add('active');
+        // Update active button
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
 
-      const filter = btn.dataset.filter;
+        const filter = btn.dataset.filter;
 
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.classList.contains(filter)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+        projectCards.forEach(card => {
+            if (filter === 'all' || card.classList.contains(filter)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
     })
-  });
+});
 
-  // internship , certification  and patents
+// internship, certification and patents filters
+const buttons = document.querySelectorAll('.certs-btn');
+const cards = document.querySelectorAll('.cert-card');
 
-  const buttons = document.querySelectorAll('.certs-btn');
-  const cards = document.querySelectorAll('.cert-card');
-
-  buttons.forEach(btn => {
+buttons.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelector('.certs-btn.active').classList.remove('active');
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+        document.querySelector('.certs-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
 
-      cards.forEach(card => {
-        if (filter === 'all' || card.classList.contains(filter)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+        cards.forEach(card => {
+            if (filter === 'all' || card.classList.contains(filter)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
-  });
+});
