@@ -1,0 +1,72 @@
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact-section .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  text-align: left;
+  color: #444;
+}
+
+.contact-info a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-socials a {
+  font-size: 1.8rem;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: #0077cc;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-info, .contact-socials {
+    flex: 1;
+  }
+
+  .contact-socials {
+    justify-content: flex-end;
+  }
+}

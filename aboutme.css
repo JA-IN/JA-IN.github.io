@@ -1,0 +1,93 @@
+/* About Me Section */
+.about {
+    background: linear-gradient(135deg, #f8f9fa, #e8ecf4);
+    color: #2c3e50;
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeInScale 1.2s ease forwards;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit;
+}
+
+.about-content {
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.about-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.about-buttons .btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+}
+
+/* Responsive About Section */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .about-content {
+        order: 2;
+    }
+
+    .about-image {
+        order: 1;
+    }
+
+    .about-title {
+        font-size: 2.2rem;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+    }
+
+    .about-buttons {
+        justify-content: center;
+    }
+}

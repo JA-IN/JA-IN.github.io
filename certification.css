@@ -1,0 +1,92 @@
+.certifications-section {
+  padding: 40px 20px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.certifications-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Filter Tabs */
+.certs-filter {
+  margin-bottom: 25px;
+}
+
+.certs-btn {
+  background: #e0e0e0;
+  border: none;
+  margin: 5px;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.certs-btn.active,
+.certs-btn:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Grid Layout */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card Design */
+.cert-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+}
+
+.cert-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.cert-card .org {
+  font-weight: 600;
+  color: #333;
+}
+
+.cert-card .date {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.cert-card .description {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #444;
+}
+
+.cert-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 600;
+}

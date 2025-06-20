@@ -1,0 +1,126 @@
+/* Skills Section */
+.skills {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    position: relative;
+    z-index: 1;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.2s forwards;
+}
+
+.skills-heading h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.skills-heading p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+/* Skill Categories */
+.skill-category {
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.4s forwards;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-left: 4px solid #667eea;
+    padding-left: 0.8rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Skill Badge */
+.skill-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.skill-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #667eea;
+}
+
+.skill-label {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills {
+        padding: 4rem 1rem;
+    }
+
+    .skills-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .skills {
+        background: linear-gradient(135deg, #1c1f2b, #2d3244);
+    }
+
+    .skills-heading h2,
+    .skill-category h3,
+    .skill-label {
+        color: #ecf0f1;
+    }
+
+    .skills-heading p {
+        color: #bbb;
+    }
+
+    .skill-item {
+        background: #2e3241;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-item:hover {
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .skill-icon {
+        color: #ffed4e;
+    }
+}
